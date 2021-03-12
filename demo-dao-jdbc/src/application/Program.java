@@ -22,10 +22,13 @@ public class Program {
 		
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 		
+		
 		System.out.println("===== TEST 1: department Insert =====");
-		Department dep = new Department(7, "Música");
-		departmentDao.insert(dep);
+		departmentDao.insert(new Department(7, "Música"));
 		System.out.println("Inserted Department!");
+		
+		System.out.println();
+		System.out.println("===== TEST 2: department Delete =====");
 		
 		
 		sc.close();
