@@ -18,6 +18,13 @@ public class Program {
 		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
+		dataAcessSellerTest(sc, sellerDao);
+		
+		sc.close();
+		
+	}
+
+	private static void dataAcessSellerTest(Scanner sc, SellerDao sellerDao) {
 		System.out.println("===== TEST 1: seller findById =====");
 		Seller seller = sellerDao.findById(3);
 		System.out.println(seller);
@@ -56,9 +63,6 @@ public class Program {
 		int id = sc.nextInt();
 		sellerDao.deleteById(id);
 		System.out.println("Delete completed!");
-		
-		sc.close();
-		
 	}
 
 }
