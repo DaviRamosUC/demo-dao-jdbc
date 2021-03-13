@@ -17,34 +17,44 @@ public class Program {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		//SellerDao sellerDao = DaoFactory.createSellerDao();
-		//dataAcessSellerTest(sc, sellerDao);
+		SellerDao sellerDao = DaoFactory.createSellerDao();
+		dataAcessSellerTest(sc, sellerDao);
 		
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
+		dataAcessDepartmentTest(sc, departmentDao);
 		
+		sc.close();
 		
+	}
+
+	private static void dataAcessDepartmentTest(Scanner sc, DepartmentDao departmentDao) {
 		System.out.println("===== TEST 1: department Insert =====");
-//		departmentDao.insert(new Department(7, "Música"));
+		departmentDao.insert(new Department(7, "Música"));
 		System.out.println("Inserted Department!");
 		
 		System.out.println();
 		System.out.println("===== TEST 2: department FindByID =====");
-//		System.out.println(departmentDao.findById(1));
+		System.out.println(departmentDao.findById(1));
 
 		System.out.println();
 		System.out.println("===== TEST 3: department DeleteByID =====");
 		System.out.print("Enter id for delete Department: ");
-//		int id = sc.nextInt();
-//		departmentDao.deleteById(id);
+		int id = sc.nextInt();
+		departmentDao.deleteById(id);
 		System.out.println("Department deleted!");
 		
 		System.out.println();
 		System.out.println("===== TEST 4: department UpdateByID =====");
 		departmentDao.update(new Department(3, "Toys"));
 		System.out.println("Update completed!");
-		
-		sc.close();
-		
+
+		System.out.println();
+		System.out.println("===== TEST 5: department FindAll =====");
+		List<Department> departments = departmentDao.findAll();
+		for (Department department : departments) {
+			System.out.println(department);
+		}
+		System.out.println("Process completed!");
 	}
 
 	private static void dataAcessSellerTest(Scanner sc, SellerDao sellerDao) {
