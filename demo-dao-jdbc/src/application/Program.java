@@ -24,11 +24,19 @@ public class Program {
 		
 		
 		System.out.println("===== TEST 1: department Insert =====");
-		departmentDao.insert(new Department(7, "Música"));
+//		departmentDao.insert(new Department(7, "Música"));
 		System.out.println("Inserted Department!");
 		
 		System.out.println();
-		System.out.println("===== TEST 2: department Delete =====");
+		System.out.println("===== TEST 2: department FindByID =====");
+//		System.out.println(departmentDao.findById(1));
+
+		System.out.println();
+		System.out.println("===== TEST 3: department DeleteByID =====");
+		System.out.print("Enter id for delete Seller: ");
+		int id = sc.nextInt();
+		departmentDao.deleteById(id);
+		System.out.println("Department deleted!");
 		
 		
 		sc.close();
