@@ -33,11 +33,15 @@ public class Program {
 
 		System.out.println();
 		System.out.println("===== TEST 3: department DeleteByID =====");
-		System.out.print("Enter id for delete Seller: ");
-		int id = sc.nextInt();
-		departmentDao.deleteById(id);
+		System.out.print("Enter id for delete Department: ");
+//		int id = sc.nextInt();
+//		departmentDao.deleteById(id);
 		System.out.println("Department deleted!");
 		
+		System.out.println();
+		System.out.println("===== TEST 4: department UpdateByID =====");
+		departmentDao.update(new Department(3, "Toys"));
+		System.out.println("Update completed!");
 		
 		sc.close();
 		
